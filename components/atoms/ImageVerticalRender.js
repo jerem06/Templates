@@ -1,13 +1,15 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, Image} from 'react-native';
+
+const source = require('../../src/assets/img/luca.png');
 
 type Props = {};
-const ScreenA = (p: Props) => {
+const ImageVerticalRender = (p: Props) => {
   /** ******************************************************************************************************************
    * Variables
    ******************************************************************************************************************** */
   // props
-  const {} = p;
+  const {item} = p;
 
   /** ******************************************************************************************************************
    * Effects
@@ -26,12 +28,23 @@ const ScreenA = (p: Props) => {
    * Renders
    ******************************************************************************************************************** */
   return (
-    <View>
-      <Text> Screen A </Text>
+    <View style={s.container}>
+      <Image style={s.imageContainer} source={source} />
+      <Text style={s.textStyle}> Test </Text>
     </View>
   );
 };
 
-const s = StyleSheet.create({});
+const s = StyleSheet.create({
+  container: {},
+  imageContainer: {
+    height: 100,
+    width: 100,
+    borderRadius: 10,
+  },
+  textStyle: {
+    color: 'white',
+  },
+});
 
-export default ScreenA;
+export default ImageVerticalRender;

@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-import ImageVerticalRender from '../components/atoms/ImageVerticalRender';
+import {StyleSheet, View, Text, FlatList} from 'react-native';
+import ImageVerticalRender from '../atoms/ImageVerticalRender';
 
 type Props = {};
-const ScreenB = (p: Props) => {
+const ImageVerticalFlatList = (p: Props) => {
   /** ******************************************************************************************************************
    * Variables
    ******************************************************************************************************************** */
   // props
-  const {} = p;
+  const {data = []} = p;
 
   /** ******************************************************************************************************************
    * Effects
@@ -16,29 +16,21 @@ const ScreenB = (p: Props) => {
   useEffect(() => {}, []);
 
   /** ******************************************************************************************************************
-   * Hooks / callbacks
-   ******************************************************************************************************************** */
-
-  /** ******************************************************************************************************************
    * Callbacks / handles
    ******************************************************************************************************************** */
+
+  const renderItem = ({item}) => <ImageVerticalRender item={item} />;
 
   /** ******************************************************************************************************************
    * Renders
    ******************************************************************************************************************** */
   return (
-    <View style={s.container}>
-      <ImageVerticalRender />
+    <View>
+      <FlatList data={data} renderItem={renderItem} />
     </View>
   );
 };
 
-const s = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+const s = StyleSheet.create({});
 
-export default ScreenB;
+export default ImageVerticalFlatList;

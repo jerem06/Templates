@@ -8,7 +8,10 @@ const StackNavigator = (p: Props) => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name="StackNavigator" component={TabNavigator} />
     </Stack.Navigator>
   );

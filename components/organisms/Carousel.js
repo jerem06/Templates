@@ -1,14 +1,34 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-import ImageVerticalRender from '../components/atoms/ImageVerticalRender';
+import {StyleSheet, View, Text, Image} from 'react-native';
+
+const source = require('../../src/assets/img/luca.png');
 
 type Props = {};
-const ScreenB = (p: Props) => {
+const Carousel = (p: Props) => {
   /** ******************************************************************************************************************
    * Variables
    ******************************************************************************************************************** */
+
   // props
-  const {} = p;
+  const {
+    data = [
+      {
+        source: require('../../src/assets/img/luca.png'),
+        name: 'Luca',
+        position: 'Manarola, Italy',
+      },
+      {
+        source: require('../../src/assets/img/luca.png'),
+        name: 'Luca',
+        position: 'Manarola, Italy',
+      },
+      {
+        source: require('../../src/assets/img/luca.png'),
+        name: 'Luca',
+        position: 'Manarola, Italy',
+      },
+    ],
+  } = p;
 
   /** ******************************************************************************************************************
    * Effects
@@ -27,18 +47,12 @@ const ScreenB = (p: Props) => {
    * Renders
    ******************************************************************************************************************** */
   return (
-    <View style={s.container}>
-      <ImageVerticalRender />
+    <View>
+      <Image source={source} />
     </View>
   );
 };
 
-const s = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+const s = StyleSheet.create({});
 
-export default ScreenB;
+export default Carousel;

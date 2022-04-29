@@ -8,7 +8,7 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigator from './navigations/stackNavigator';
@@ -17,6 +17,7 @@ import StackNavigator from './navigations/stackNavigator';
 const App: () => Node = () => {
   return (
     <NavigationContainer>
+      <StatusBar hidden />
       <StackNavigator />
       {/*<TabNavigator/>*/}
     </NavigationContainer>
