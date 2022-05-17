@@ -13,24 +13,33 @@ const Home = (p: Props) => {
   // props
   const {} = p;
 
-  // const data = [
-  //   {
-  //     source: require('../../src/assets/img/luca.png'),
-  //     name: 'Luca',
-  //     position: 'Manarola, Italy',
-  //   },
-  //   {
-  //     source: require('../../src/assets/img/luca.png'),
-  //     name: 'Luca',
-  //     position: 'Manarola, Italy',
-  //   },
-  //   {
-  //     source: require('../../src/assets/img/luca.png'),
-  //     name: 'Luca',
-  //     position: 'Manarola, Italy',
-  //   },
-  // ];
-  // ];
+  const data = [
+    {
+      // source: require('../../src/assets/img/luca.png'),
+      name: 'Luca',
+      position: 'Manarola, Italy',
+    },
+    {
+      // source: require('../../src/assets/img/luca.png'),
+      name: 'Luca',
+      position: 'Manarola, Italy',
+    },
+    {
+      // source: require('../../src/assets/img/luca.png'),
+      name: 'Luca',
+      position: 'Manarola, Italy',
+    },
+    {
+      // source: require('../../src/assets/img/luca.png'),
+      name: 'Luca',
+      position: 'Manarola, Italy',
+    },
+    {
+      // source: require('../../src/assets/img/luca.png'),
+      name: 'Luca',
+      position: 'Manarola, Italy',
+    },
+  ];
 
   /** ******************************************************************************************************************
    * Effects
@@ -51,11 +60,23 @@ const Home = (p: Props) => {
   return (
     <View>
       <Carousel />
-      {/*<ImageVerticalFalList data={data} />*/}
+      <View style={s.flatListContainer}>
+        <ImageVerticalFalList data={data} />
+      </View>
+      <View style={s.flatListContainer}>
+        <ImageVerticalFalList data={data} />
+      </View>
+      <View style={s.flatListContainer}>
+        <ImageVerticalFalList data={data} />
+      </View>
     </View>
   );
 };
 
-const s = StyleSheet.create({});
+const s = StyleSheet.create({
+  flatListContainer: {
+    marginTop: 5,
+  },
+});
 
 export default Home;

@@ -19,18 +19,27 @@ const ImageVerticalFlatList = (p: Props) => {
    * Callbacks / handles
    ******************************************************************************************************************** */
 
-  const renderItem = ({item}) => <ImageVerticalRender item={item} />;
+  const renderItem = ({item}) => (
+    <View style={s.ItemContainer}>
+      <ImageVerticalRender item={item} />
+    </View>
+  );
 
   /** ******************************************************************************************************************
    * Renders
    ******************************************************************************************************************** */
   return (
     <View>
-      <FlatList data={data} renderItem={renderItem} />
+      <FlatList horizontal data={data} renderItem={renderItem} />
     </View>
   );
 };
 
-const s = StyleSheet.create({});
+const s = StyleSheet.create({
+  container: {},
+  ItemContainer: {
+    marginHorizontal: 5,
+  },
+});
 
 export default ImageVerticalFlatList;
